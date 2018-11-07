@@ -26,7 +26,8 @@ module.exports.connect = function (callback) {
   var options = _.merge(config.db.options || {}, { useMongoClient: true });
 
   mongoose
-    .connect(config.db.uri, options)
+   // .connect(config.db.uri, options)
+  .connect('mongodb://prabin:prabin123@ds121343.mlab.com:21343/shopping', options)
     .then(function (connection) {
       // Enabling mongoose debug mode if required
       mongoose.set('debug', config.db.debug);
